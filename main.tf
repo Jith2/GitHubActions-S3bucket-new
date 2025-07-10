@@ -15,18 +15,17 @@ module "customer_buckets" {
   tags        = var.tags
 }
 
-output "policy_documents" {
+output "bucket_policies" {
   value = {
-    for k, m in module.customer_buckets : k => m.iam_policy_arn
+    for k, m in module.customer_buckets : k => m.bucket_policy
   }
 }
   
 terraform {
   backend "s3" {
-    bucket         = "marketing-execution-terraform-remote"
-    key            = "Statefile-campaign-qa/terraform.tfstate"
-    region         = "eu-central-1"
+    bucket         = "statefile-campaign-dev"
+    key            = "Statefile-campaign/terraform.tfstate"
+    region         = "ap-south-1"
     encrypt        = true
-    use_lockfile   = true
   }
 }
