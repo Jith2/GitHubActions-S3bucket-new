@@ -1,3 +1,3 @@
 customer_buckets = {
-"om-campaign-agcs" = [ "DataExportFromCampaign/", "DataImportToCampaign/dummpy/"]
+"om-campaign-agcs" = [ "DataExportFromCampaign/", "DataImportToCampaign/"]
 }
